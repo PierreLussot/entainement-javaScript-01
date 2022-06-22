@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercice</title>
+    <script>
+
+  function dessiner () {
+    var rows = document.querySelector ( '#rows').value;
+    var cols = document.querySelector ( '#cols').value;
+    var ecran =document.querySelector ('#ecran');
+    ecran.innerHTML = makeTable ( rows,cols);
+
+  }
+
+  var color = "black" ; 
+
+  function makeTable( r , c ) {
+    var table = "<table border = '5'>"
+      for (let i = 0; i < r; i++) {
+        table +=  "<tr >"
+          for (let j = 0; j < c; j++) {
+            table +=  "<td ' onmouseover = 'this.style.backgroundColor = color '>" +"</td>"
+            
+          }
+          table +=  "</td>"
+      }
+      table += "</table>"
+
+   
+    return table
+  }
+  
+
+  function colorier() {
+    
+  }
+
+    </script>
+
+    <style>
+      #ecran td{
+    width: 55px;
+    height: 55px;
+      }
+#palette td{
+  width: 55px;
+    height: 55px;
+}
+    </style>
+
+  </head>
+
+  <body>
+    
+
+    rows : <input type= "texte" id="rows"  value="10"></input> <br>
+    cols : <input type= "texte" id="cols" value="10"></input> <br>
+
+    <button onclick="dessiner()">Dessiner</button>
+    <div id="ecran"></div>
+
+    <div id="palette">
+      <table>
+        <tr>
+          <td style="background: red" onclick= "color= 'red' "></td>
+          <td style="background: yellow" onclick= "color= 'yellow' "></td>
+          <td style="background: blue" onclick= "color= 'blue' "></td>
+          <td style="background: orange" onclick= "color= 'orange' "></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
